@@ -1,7 +1,7 @@
 {
   "name": "redux-observable-action",
-  "version": "0.0.2",
-  "description": "An RxJS-based Redux middleware that flow out actions for easy side-effect processing",
+  "version": "0.0.3",
+  "description": "A RxJS-based Redux middleware that flow out actions for easy side-effect processing",
   "files": [
     "build",
     "index.d.ts"
@@ -19,6 +19,7 @@
   "main": "build/redux-observable-action.mjs",
   "module": "build/redux-observable-action.umd.js",
   "license": "MIT",
+  "homepage": "https://github.com/ienyh/react-observable-action#README.md",
   "repository": {
     "type": "git",
     "url": "https://github.com/ienyh/react-observable-action.git"

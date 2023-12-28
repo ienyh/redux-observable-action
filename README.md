@@ -1,7 +1,16 @@
+# redux-observable-action
+
+A RxJS-based Redux middleware that flow out actions for easy side-effect processing
+
+Inspired by [redux-observable](https://github.com/redux-observable/redux-observable)
+
+## Usage
+
+```js
 import { test, expect } from 'vitest'
 import { Action, applyMiddleware, legacy_createStore } from 'redux'
 import { Observable } from 'rxjs'
-import { createMiddleware } from '../src'
+import { createMiddleware } from 'redux-observable-action'
 
 const reducer = (state = 0, action) => {
   switch (action.type) {
@@ -17,26 +26,17 @@ const reducer = (state = 0, action) => {
 const streamerMiddleware = createMiddleware()
 const store = legacy_createStore(reducer, applyMiddleware(streamerMiddleware))
 
-let external = 0
 function rootStreamer(action$: Observable<Action>) {
   return action$.subscribe(action => {
     if (action.type === 'INCREMENT') {
-      external += 1
-    }
-    if (action.type === 'DECREMENT') {
-      external -= 1
+      // do something
     }
   })
 }
 
 streamerMiddleware.run(rootStreamer)
+```
 
-test('redux-observable-action', () => {
-  const { dispatch, getState } = store
-  dispatch({ type: 'INCREMENT' })
-  expect(getState()).toBe(1)
-  expect(external).toBe(1)
-  dispatch({ type: 'DECREMENT' })
-  expect(getState()).toBe(0)
-  expect(external).toBe(0)
-})
+## More
+
+- [observable-duck](https://github.com/ienyh/observable): In-depth combination of redux use, complete types
