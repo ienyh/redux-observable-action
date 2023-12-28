@@ -1,6 +1,6 @@
 {
   "name": "redux-observable-action",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A RxJS-based Redux middleware that flow out actions for easy side-effect processing",
   "files": [
     "build",

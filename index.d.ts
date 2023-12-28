@@ -11,10 +11,6 @@ declare interface StreamMiddleware<A extends Action, S extends any>
   close(): void
 }
 
-declare interface combineStreamers<A extends Action = Action> {
-  (...streamers: Streamer[]): Streamer<A>
-}
+declare function combineStreamers<A extends Action = Action>(...streamers: Streamer[]): Streamer<A>
 
-declare interface createMiddleware<A extends Action, S extends any> {
-  (): StreamMiddleware<A, S>
-}
+declare function createMiddleware<A extends Action, S extends any>(): StreamMiddleware<A, S>
