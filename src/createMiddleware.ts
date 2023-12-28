@@ -15,11 +15,13 @@ export default function createMiddleware<A extends Action = Action, S = any>() {
    * register the streamer
    */
   middleware.run = (streamer: Streamer) => {
-    if (!subscription || subscription?.closed) return
+    if (subscription) {
+      return subscription.unsubscribe()
+    }
     subscription = streamer(action$)
   }
   middleware.close = () => {
-    if (!subscription || !subscription?.unsubscribe) return
+    if (!subscription) return
     subscription.unsubscribe()
   }
   return middleware as StreamMiddleware<A, S>

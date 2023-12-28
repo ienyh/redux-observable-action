@@ -1,7 +1,7 @@
 {
   "name": "redux-observable-action",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2",
+  "description": "An RxJS-based Redux middleware that flow out actions for easy side-effect processing",
   "files": [
     "build",
     "index.d.ts"
@@ -24,7 +24,7 @@
     "url": "https://github.com/ienyh/react-observable-action.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\"",
+    "test": "vitest",
     "build": "vite build"
   },
   "peerDependencies": {
@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "typescript": "^5.3.3",
-    "vite": "^5.0.10"
+    "vite": "^5.0.10",
+    "vitest": "^1.1.0"
   }
 }
