@@ -10,3 +10,11 @@ declare interface StreamMiddleware<A extends Action, S extends any>
   run(root: Streamer<A>): void
   close(): void
 }
+
+declare interface combineStreamers<A extends Action = Action> {
+  (...streamers: Streamer[]): Streamer<A>
+}
+
+declare interface createMiddleware<A extends Action, S extends any> {
+  (): StreamMiddleware<A, S>
+}
