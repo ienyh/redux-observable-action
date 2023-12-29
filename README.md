@@ -6,6 +6,10 @@ Inspired by [redux-observable](https://github.com/redux-observable/redux-observa
 
 ## Usage
 
+```bash
+npm i redux-observable-action
+```
+
 ```js
 import { test, expect } from 'vitest'
 import { Action, applyMiddleware, legacy_createStore } from 'redux'
