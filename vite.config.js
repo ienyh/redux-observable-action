@@ -8,6 +8,9 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
       name: 'redux-observable-duck',
-    }
+    },
+    rollupOptions: {
+      external: ['redux', 'rxjs'],
+    },
   }
 })
